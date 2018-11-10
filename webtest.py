@@ -11,6 +11,7 @@ with open("output.html") as fp:
 def convertToForm(soup):
     questions_blocks = soup.find_all("ol", type=1) #find all ols with numbers
     returnString = ""
+    #print(soup.find_all("li"), recursive=False)
     for block in questions_blocks:
         questions = block.find_all("li", recursive=False)
         questionIndex = 0
@@ -25,7 +26,7 @@ def convertToForm(soup):
                             new_input = soup.new_tag("input", type="radio")
                             new_input['name'] = questionIndex
                             new_input['value'] = letters[ansIndex]
-                            l.insert_before(new_input)
+                            l.p.string.insert_before(new_input)
                         else:
                             l.append(soup.new_tag("br"))
                             l.append(soup.new_tag("textarea"))
@@ -58,11 +59,11 @@ def setAllStarts(soup):
         l['start'] = 1
 
 
-f = open("output.html", "w", encoding='utf8')
+f = open("output2.html", "w", encoding='utf8')
 f.write('')
 f.write(convertToForm(soup))
 f.close()
-f = open("output.html", "r")
+f = open("output2.html", "r")
 contents = ""
 for line in f:
     contents += line
@@ -71,6 +72,6 @@ contents = "<html><body><form>" + contents + "</form></body></html>"
 contents.replace("!NOTMC", "")
 f.close()
 
-f = open("output.html", "w", encoding='utf8')
+f = open("output2.html", "w", encoding='utf8')
 f.write(contents)
 f.close()
