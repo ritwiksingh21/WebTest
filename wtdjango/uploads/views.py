@@ -12,4 +12,4 @@ def model_form_upload(request):
             return redirect('uploads')
     else:
         form = DocumentForm()
-    return render(request, 'questions/model_form_upload.html', {'form': form})
+    return render(request, 'uploads/model_form_upload.html', {'form': form})
