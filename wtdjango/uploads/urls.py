@@ -17,5 +17,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.model_form_upload, name="uploads")
+    path('', views.DocumentListView.as_view(), name="uploads"),
+    path('new/', views.model_form_upload, name="new-upload")
 ]
