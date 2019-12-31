@@ -17,4 +17,3 @@ def model_form_upload(request):
 
 class DocumentListView(ListView):
     model = Document
-    
