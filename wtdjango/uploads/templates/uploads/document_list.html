@@ -2,7 +2,7 @@
 {% block content %}
   <br/>
   {% for post in object_list %}
-    <h2>{{ post.description }}</a></h2>
+    <h2><a href="{{ post.document.url }}">{{ post.description }}</a></h2>
   <br/>
   {% empty %}
     <h1>It appears you don't have any current documents</h1>
