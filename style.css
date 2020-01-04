@@ -1,0 +1,148 @@
+body {
+    margin: 0px;
+    font-family : "roboto";
+}
+
+#header {
+    z-index: 1;
+    position: fixed;
+    background : #0277bd;
+    width: 100%;
+    padding-top: 5px;
+    height: 65px;
+    box-shadow: 0px 1px 3px #78909c ;
+}
+#title{
+    width: 250px;
+    text-align: center;
+    margin: auto;
+    color: white;
+    font-size: 50px;
+    font-weight: 500;
+}
+.b_cont{
+    position: absolute;
+    margin-top: 100px;
+    width: 100%;
+}
+#b_cont_main{
+    width: 60%;
+    margin: auto;
+}
+ol>li{
+    padding: 5px 40px;
+}
+input[type=text]{
+    margin-top: 5px;
+    border: none;
+    height: 40px;
+    width: 60%;
+    padding: 10px 10px;
+    color: #37474f;
+    background: #cfd8dc;
+    border: 1px solid #cfd8dc;
+}
+input[type=text]:hover{
+    
+    border: 1px solid #0277bd;
+    color: black;
+}
+input[type=text]:focus{
+    background: white;
+    color: black;
+    border: 1px solid #0277bd;
+}
+.container {
+  display: block;
+  position: relative;
+  padding-top: 5px; 
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+
+.checkmark {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.container input:checked ~ .checkmark{
+  background-color: #0277bd;
+}
+.container input:checked ~ .container{
+  color: red;
+}
+
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+.container input:checked ~ .container{ 
+    color: red;
+}
+.container .checkmark:after {
+ 	top: 5px;
+	left: 5px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+@media only screen and (max-width: 1200px) {
+ input[type=text]  {
+    width: 75%%;
+  }
+    #b_cont_main{
+    width: 70%;
+    }
+}
+@media only screen and (max-width: 1000px) {
+ input[type=text]  {
+    width: 80%;
+  }
+    #b_cont_main{
+    width: 80%;
+    }
+}
+@media only screen and (max-width: 800px) {
+ input[type=text]  {
+    width: 90%;
+  }
+    #b_cont_main{
+    width: 85%;
+    }
+}
+@media only screen and (max-width: 800px) {
+ input[type=text]  {
+    width: 95%;
+  }
+    #b_cont_main{
+    width: 95%;
+    }
+}
